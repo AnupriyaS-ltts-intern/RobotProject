@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220314 13:00:46.175" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220314 13:05:05.448" rpa="false" schemaversion="2">
 <suite id="s1" name="Demo1 Orangehrm Suite" source="D:\ROBOT\Robot_Project\selenium_suite\demo1_orangehrm_suite.robot">
 <test id="s1-t1" name="TC1">
 <kw name="Append To Environment Variable" library="OperatingSystem">
 <arg>Path</arg>
 <arg>${EXECDIR}${/}driver${/}</arg>
 <doc>Appends given ``values`` to environment variable ``name``.</doc>
-<msg timestamp="20220314 13:00:46.683" level="INFO">Environment variable 'Path' set to value 'C:\Program Files\Python310\Scripts\;C:\Program Files\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\anupr\anaconda3\Scripts;C:\Users\anupr\anaconda3\Library\bin;C:\Users\anupr\AppData\Roaming\Python\Python39\Scripts;C:\Program Files\Git\cmd;C:\Users\anupr\AppData\Local\Microsoft\WindowsApps1;C:\Users\anupr\AppData\Local\Programs\Microsoft VS Code\bin;;D:\ROBOT\Robot_Project\driver\'.</msg>
-<status status="PASS" starttime="20220314 13:00:46.667" endtime="20220314 13:00:46.683"/>
+<msg timestamp="20220314 13:05:06.017" level="INFO">Environment variable 'Path' set to value 'C:\Program Files\Python310\Scripts\;C:\Program Files\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\anupr\anaconda3\Scripts;C:\Users\anupr\anaconda3\Library\bin;C:\Users\anupr\AppData\Roaming\Python\Python39\Scripts;C:\Program Files\Git\cmd;C:\Users\anupr\AppData\Local\Microsoft\WindowsApps1;C:\Users\anupr\AppData\Local\Programs\Microsoft VS Code\bin;;D:\ROBOT\Robot_Project\driver\'.</msg>
+<status status="PASS" starttime="20220314 13:05:06.017" endtime="20220314 13:05:06.017"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>url=https://opensource-demo.orangehrmlive.com/</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220314 13:00:46.683" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
-<status status="PASS" starttime="20220314 13:00:46.683" endtime="20220314 13:00:58.794"/>
+<msg timestamp="20220314 13:05:06.017" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20220314 13:05:06.017" endtime="20220314 13:05:14.549"/>
 </kw>
-<status status="PASS" starttime="20220314 13:00:46.667" endtime="20220314 13:00:58.795"/>
+<status status="PASS" starttime="20220314 13:05:06.017" endtime="20220314 13:05:14.550"/>
 </test>
-<status status="PASS" starttime="20220314 13:00:46.179" endtime="20220314 13:00:58.797"/>
+<status status="PASS" starttime="20220314 13:05:05.453" endtime="20220314 13:05:14.553"/>
 </suite>
 <statistics>
 <total>
