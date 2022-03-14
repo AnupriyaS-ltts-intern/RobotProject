@@ -17,3 +17,13 @@ TC2
     Sleep    5s
     Remove File    E:${/}Temp${/}My_Folder${/}notes.txt
     Remove Directory    E:${/}Temp${/}My_Folder     True
+
+TC3
+    Create Directory    ${EXECDIR}{/}my_folder
+    Create File    ${EXECDIR}{/}my_folder${/}notes.txt     Anupriya S
+    File Should Exist     ${EXECDIR}{/}my_folder${/}notes.txt
+    File Should Exist     ${EXECDIR}{/}my_folder${/}notes1.txt
+
+
+
+
