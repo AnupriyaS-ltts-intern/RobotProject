@@ -24,6 +24,9 @@ TC3
     File Should Exist     ${EXECDIR}{/}my_folder${/}notes.txt
     File Should Exist     ${EXECDIR}{/}my_folder${/}notes1.txt
 
+TC4
+    Create Directory     D:${/}ROBOT${/}Robot_Project${/}anu_folder
+
 
 
 
