@@ -1,12 +1,3 @@
-*** Comments ***
-1. Navigate https://www.royalcaribbean.com/account/
-2. Click on create an account
-3. Enter first name
-4. Enter last name
-5. Month as April
-6. Day as 4
-7. year as 1992
-
 *** Settings ***
 Library     SeleniumLibrary
 
