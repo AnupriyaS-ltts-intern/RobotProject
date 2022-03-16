@@ -18,7 +18,7 @@ TC2
     Maximize Browser Window
     Set Selenium Implicit Wait    20s
     Go To    url=https://nasscom.in/nasscom-membership
-    Click Element     id=edit-submitted-contact-person-for-nasscom-email-id-cp
+    Click Element     xpath=//a['id=edit-submitted-contact-person-for-nasscom-email-id-cp']
     ${alert_text}     Handle Alert     action=ACCEPT     timeout=50s
     Log To Console     ${alert_text}
 
