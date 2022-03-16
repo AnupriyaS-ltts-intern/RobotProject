@@ -34,7 +34,7 @@ TC1 Sign Up
     Input Text     xpath=//input[@data-placeholder="Year"]     1992
 
     Click Element     xpath=//span[text()='Country/Region of residence']
-    Click Element     xpath=//span[contains(text(),'India')]
+    Click Element     xpath=(//span[contains(text(),'India')])[2]
 
     Input Text     xpath=//input[@data-placeholder="Email address"]     lt@gmail.com
 
@@ -44,8 +44,9 @@ TC1 Sign Up
     Input Text     xpath=//input[@data-placeholder="Answer"]     Xxxx
 
     Click Element     xpath=//span[@class='mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin']
+    #Click Element     xpath=//span[contains(@class,'checkbox-inner')]
 
-    Click Element     xpath=//button[contains(text(),' Done ')]
+    Click Element     xpath=//button[normalize-space()="Done")]
 
 
 
