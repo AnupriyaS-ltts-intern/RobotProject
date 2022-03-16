@@ -1,208 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220316 15:51:10.497" rpa="false" schemaversion="2">
-<suite id="s1" name="Demo10 Selenium Suite" source="D:\ROBOT\Robot_Project\selenium_suite\demo10_selenium_suite.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220316 17:17:35.560" rpa="false" schemaversion="2">
+<suite id="s1" name="Demo5 Suite" source="D:\ROBOT\Robot_Project\robot_suite\demo5_suite.robot">
 <test id="s1-t1" name="TC1">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220316 15:51:11.191" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220316 15:51:11.190" endtime="20220316 15:51:14.071"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220316 15:51:14.138" endtime="20220316 15:51:14.472"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>20s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220316 15:51:14.473" endtime="20220316 15:51:14.476"/>
-</kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>1s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20220316 15:51:14.476" endtime="20220316 15:51:14.477"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://www.google.com</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220316 15:51:14.478" level="INFO">Opening url 'https://www.google.com'</msg>
-<status status="PASS" starttime="20220316 15:51:14.478" endtime="20220316 15:51:18.910"/>
-</kw>
-<kw name="Get Title" library="SeleniumLibrary">
-<var>${title}</var>
-<doc>Returns the title of the current page.</doc>
-<msg timestamp="20220316 15:51:19.932" level="INFO">${title} = Google</msg>
-<status status="PASS" starttime="20220316 15:51:18.911" endtime="20220316 15:51:19.932"/>
+<kw name="Set Local Variable" library="BuiltIn">
+<arg>${name}</arg>
+<arg>AnupriyaS</arg>
+<doc>Makes a variable available everywhere within the local scope.</doc>
+<msg timestamp="20220316 17:17:36.185" level="INFO">${name} = AnupriyaS</msg>
+<status status="PASS" starttime="20220316 17:17:36.183" endtime="20220316 17:17:36.185"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${title}</arg>
+<arg>${name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220316 15:51:19.933" endtime="20220316 15:51:19.934"/>
+<status status="PASS" starttime="20220316 17:17:36.185" endtime="20220316 17:17:36.186"/>
 </kw>
-<kw name="Get Location" library="SeleniumLibrary">
-<var>${url}</var>
-<doc>Returns the current browser window URL.</doc>
-<msg timestamp="20220316 15:51:20.952" level="INFO">${url} = https://www.google.com/</msg>
-<status status="PASS" starttime="20220316 15:51:19.934" endtime="20220316 15:51:20.952"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${val}</var>
+<arg>Anu</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220316 17:17:36.187" level="INFO">${val} = Anu</msg>
+<status status="PASS" starttime="20220316 17:17:36.187" endtime="20220316 17:17:36.188"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${url}</arg>
+<arg>${name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220316 15:51:20.952" endtime="20220316 15:51:20.953"/>
+<status status="PASS" starttime="20220316 17:17:36.188" endtime="20220316 17:17:36.189"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>xpath=//input[@title='Search']</arg>
-<arg>hello world</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220316 15:51:20.955" level="INFO">Sending key(s) ('hello world',) to xpath=//input[@title='Search'] element.</msg>
-<msg timestamp="20220316 15:51:23.468" level="INFO">Sending keys hello world</msg>
-<status status="PASS" starttime="20220316 15:51:20.954" endtime="20220316 15:51:24.805"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MY_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.190" endtime="20220316 17:17:36.191"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>None</arg>
-<arg>ARROW_DOWN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220316 15:51:24.809" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
-<msg timestamp="20220316 15:51:24.809" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
-<msg timestamp="20220316 15:51:24.809" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20220316 15:51:24.807" endtime="20220316 15:51:25.917"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>None</arg>
-<arg>ARROW_DOWN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220316 15:51:25.941" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
-<msg timestamp="20220316 15:51:25.941" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
-<msg timestamp="20220316 15:51:25.941" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20220316 15:51:25.940" endtime="20220316 15:51:27.000"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>None</arg>
-<arg>ARROW_DOWN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220316 15:51:27.002" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
-<msg timestamp="20220316 15:51:27.002" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
-<msg timestamp="20220316 15:51:27.002" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20220316 15:51:27.001" endtime="20220316 15:51:28.028"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>None</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220316 15:51:28.030" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
-<msg timestamp="20220316 15:51:28.030" level="INFO">Pressing special key ENTER to browser.</msg>
-<msg timestamp="20220316 15:51:28.031" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220316 15:51:28.029" endtime="20220316 15:51:33.134"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220316 15:51:33.135" endtime="20220316 15:51:37.190"/>
-</kw>
-<status status="PASS" starttime="20220316 15:51:11.189" endtime="20220316 15:51:37.191"/>
+<status status="PASS" starttime="20220316 17:17:36.182" endtime="20220316 17:17:36.191"/>
 </test>
 <test id="s1-t2" name="TC2">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220316 15:51:37.196" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220316 15:51:37.194" endtime="20220316 15:51:40.973"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MY_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.194" endtime="20220316 17:17:36.195"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220316 15:51:40.976" endtime="20220316 15:51:42.243"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>20s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220316 15:51:42.244" endtime="20220316 15:51:43.259"/>
-</kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>1s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20220316 15:51:43.260" endtime="20220316 15:51:43.260"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://www.myntra.com/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220316 15:51:43.261" level="INFO">Opening url 'https://www.myntra.com/'</msg>
-<status status="PASS" starttime="20220316 15:51:43.261" endtime="20220316 15:51:52.184"/>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>xpath=//span[text()='Profile']</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20220316 15:51:52.189" level="INFO">Simulating Mouse Over on element 'xpath=//span[text()='Profile']'.</msg>
-<status status="PASS" starttime="20220316 15:51:52.188" endtime="20220316 15:51:54.813"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//a[text()='login / Signup']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220316 15:51:54.814" level="INFO">Clicking element 'xpath=//a[text()='login / Signup']'.</msg>
-<status status="PASS" starttime="20220316 15:51:54.814" endtime="20220316 15:52:02.495"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220316 15:52:02.497" endtime="20220316 15:52:05.984"/>
-</kw>
-<status status="PASS" starttime="20220316 15:51:37.193" endtime="20220316 15:52:05.985"/>
+<status status="PASS" starttime="20220316 17:17:36.193" endtime="20220316 17:17:36.196"/>
 </test>
 <test id="s1-t3" name="TC3">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220316 15:52:05.989" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220316 15:52:05.988" endtime="20220316 15:52:08.948"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${COLORS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.204" endtime="20220316 17:17:36.205"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220316 15:52:08.973" endtime="20220316 15:52:10.144"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${COLORS}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.206" endtime="20220316 17:17:36.207"/>
 </kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>20s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220316 15:52:10.145" endtime="20220316 15:52:11.151"/>
+<kw name="Get Length" library="BuiltIn">
+<var>${count}</var>
+<arg>${COLORS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220316 17:17:36.208" level="INFO">Length is 4</msg>
+<msg timestamp="20220316 17:17:36.209" level="INFO">${count} = 4</msg>
+<status status="PASS" starttime="20220316 17:17:36.208" endtime="20220316 17:17:36.209"/>
 </kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>1s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20220316 15:52:11.152" endtime="20220316 15:52:11.152"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.210" endtime="20220316 17:17:36.212"/>
 </kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://nasscom.in</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220316 15:52:11.153" level="INFO">Opening url 'https://nasscom.in'</msg>
-<status status="PASS" starttime="20220316 15:52:11.153" endtime="20220316 15:52:20.517"/>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>xpath=//a[text()='Membership']</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20220316 15:52:20.518" level="INFO">Simulating Mouse Over on element 'xpath=//a[text()='Membership']'.</msg>
-<status status="PASS" starttime="20220316 15:52:20.518" endtime="20220316 15:52:22.860"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//a[text()='Members Listing']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220316 15:52:22.861" level="INFO">Clicking element 'xpath=//a[text()='Members Listing']'.</msg>
-<status status="PASS" starttime="20220316 15:52:22.861" endtime="20220316 15:52:27.656"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220316 15:52:27.657" endtime="20220316 15:52:31.054"/>
-</kw>
-<status status="PASS" starttime="20220316 15:52:05.987" endtime="20220316 15:52:31.055"/>
+<status status="PASS" starttime="20220316 17:17:36.202" endtime="20220316 17:17:36.212"/>
 </test>
-<status status="PASS" starttime="20220316 15:51:10.501" endtime="20220316 15:52:31.057"/>
+<test id="s1-t4" name="TC4">
+<kw name="Create List" library="BuiltIn">
+<var>@{fruits}</var>
+<arg>apple</arg>
+<arg>banana</arg>
+<arg>mango</arg>
+<arg>pineapple</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220316 17:17:36.215" level="INFO">@{fruits} = [ apple | banana | mango | pineapple ]</msg>
+<status status="PASS" starttime="20220316 17:17:36.214" endtime="20220316 17:17:36.215"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${fruits}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.215" endtime="20220316 17:17:36.216"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${fruits}[2]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.216" endtime="20220316 17:17:36.217"/>
+</kw>
+<kw name="Remove Values From List" library="Collections">
+<arg>${fruits}</arg>
+<arg>mango</arg>
+<doc>Removes all occurrences of given ``values`` from ``list``.</doc>
+<status status="PASS" starttime="20220316 17:17:36.218" endtime="20220316 17:17:36.220"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${fruits}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.221" endtime="20220316 17:17:36.222"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fruits}</arg>
+<arg>orange</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220316 17:17:36.222" endtime="20220316 17:17:36.223"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${fruits}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.223" endtime="20220316 17:17:36.224"/>
+</kw>
+<kw name="Insert Into List" library="Collections">
+<arg>${fruits}</arg>
+<arg>2</arg>
+<arg>Jackfruit</arg>
+<doc>Inserts ``value`` into ``list`` to the position specified with ``index``.</doc>
+<status status="PASS" starttime="20220316 17:17:36.225" endtime="20220316 17:17:36.226"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${fruits}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220316 17:17:36.227" endtime="20220316 17:17:36.228"/>
+</kw>
+<status status="PASS" starttime="20220316 17:17:36.213" endtime="20220316 17:17:36.230"/>
+</test>
+<status status="PASS" starttime="20220316 17:17:35.563" endtime="20220316 17:17:36.232"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Demo10 Selenium Suite">Demo10 Selenium Suite</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="Demo5 Suite">Demo5 Suite</stat>
 </suite>
 </statistics>
 <errors>
