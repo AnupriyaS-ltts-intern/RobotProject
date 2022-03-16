@@ -43,12 +43,14 @@ TC1 Sign Up
 
     Input Text     xpath=//input[@data-placeholder="Answer"]     Xxxx
 
-    Click Element     xpath=//span[@class='mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin']
-    #Click Element     xpath=//span[contains(@class,'checkbox-inner')]
+    #Click Element     xpath=//span[@class='mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin']
 
-    Click Element     xpath=//button[normalize-space()="Done")]
+    Click Element    xpath=//input[@type='checkbox']/..
+    Click Element    xpath=//button[normalize-space()='Done']
 
+    Element Text Should Be    //span[contains(text(),'Password')]    Password is required.
 
+    Sleep    5s
 
 
 
