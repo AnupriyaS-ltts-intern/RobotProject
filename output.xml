@@ -1,55 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220316 17:38:21.422" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220317 09:39:54.572" rpa="false" schemaversion="2">
 <suite id="s1" name="Demo6 Suite" source="D:\ROBOT\Robot_Project\robot_suite\demo6_suite.robot">
 <test id="s1-t1" name="TC1">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${PERSONAL_DETAILS}</arg>
+<arg>${PERSONAL_DETAIL}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220316 17:38:21.514" endtime="20220316 17:38:21.516"/>
+<status status="PASS" starttime="20220317 09:39:55.071" endtime="20220317 09:39:55.073"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${PERSONAL_DETAILS}{firstname}</arg>
+<arg>${PERSONAL_DETAIL}[firstname]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220316 17:38:21.516" endtime="20220316 17:38:21.518"/>
+<status status="PASS" starttime="20220317 09:39:55.075" endtime="20220317 09:39:55.076"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${PERSONAL_DETAILS}{lastname}</arg>
+<arg>${PERSONAL_DETAIL}[lastname]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220316 17:38:21.518" endtime="20220316 17:38:21.521"/>
+<status status="PASS" starttime="20220317 09:39:55.083" endtime="20220317 09:39:55.084"/>
 </kw>
-<status status="PASS" starttime="20220316 17:38:21.513" endtime="20220316 17:38:21.522"/>
+<status status="PASS" starttime="20220317 09:39:55.070" endtime="20220317 09:39:55.085"/>
 </test>
 <test id="s1-t2" name="TC2">
-<kw name="Create Directory" library="OperatingSystem">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${PERSONAL_DETAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220317 09:39:55.126" endtime="20220317 09:39:55.132"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${PERSONAL_DETAIL}[firstname]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220317 09:39:55.135" endtime="20220317 09:39:55.136"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${PERSONAL_DETAIL}[lastname]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220317 09:39:55.137" endtime="20220317 09:39:55.138"/>
+</kw>
+<status status="PASS" starttime="20220317 09:39:55.123" endtime="20220317 09:39:55.139"/>
+</test>
+<test id="s1-t3" name="TC3">
+<kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{emp_dic}</var>
 <arg>empname=Anupriya</arg>
-<doc>Creates the specified directory.</doc>
-<msg timestamp="20220316 17:38:21.526" level="INFO" html="true">Created directory '&lt;a href="file://D:\ROBOT\Robot_Project\empname=Anupriya"&gt;D:\ROBOT\Robot_Project\empname=Anupriya&lt;/a&gt;'.</msg>
-<msg timestamp="20220316 17:38:21.526" level="INFO">&amp;{emp_dic} = { }</msg>
-<status status="PASS" starttime="20220316 17:38:21.524" endtime="20220316 17:38:21.526"/>
+<arg>companyname=XXX</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220317 09:39:55.150" level="INFO">&amp;{emp_dic} = { empname=Anupriya | companyname=XXX }</msg>
+<status status="PASS" starttime="20220317 09:39:55.146" endtime="20220317 09:39:55.150"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${emp_dic}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220316 17:38:21.527" endtime="20220316 17:38:21.530"/>
+<status status="PASS" starttime="20220317 09:39:55.150" endtime="20220317 09:39:55.154"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${emp_dic}{empname}</arg>
+<arg>${emp_dic}[empname]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220316 17:38:21.530" endtime="20220316 17:38:21.531"/>
+<status status="PASS" starttime="20220317 09:39:55.155" endtime="20220317 09:39:55.156"/>
 </kw>
-<status status="PASS" starttime="20220316 17:38:21.523" endtime="20220316 17:38:21.532"/>
+<status status="PASS" starttime="20220317 09:39:55.141" endtime="20220317 09:39:55.159"/>
 </test>
-<status status="PASS" starttime="20220316 17:38:21.426" endtime="20220316 17:38:21.534"/>
+<status status="PASS" starttime="20220317 09:39:54.577" endtime="20220317 09:39:55.166"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Demo6 Suite">Demo6 Suite</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Demo6 Suite">Demo6 Suite</stat>
 </suite>
 </statistics>
 <errors>
