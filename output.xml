@@ -1,118 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220318 11:44:18.129" rpa="false" schemaversion="2">
-<suite id="s1" name="Demo2 Medibuddy Tabs Suite" source="D:\ROBOT\Robot_Project\selenium_suite\demo2_medibuddy_tabs_suite.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220318 12:53:51.633" rpa="false" schemaversion="2">
+<suite id="s1" name="Demo1 Suite" source="D:\ROBOT\Robot_Project\db_suite\demo1_suite.robot">
+<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
+<arg>dbapiModuleName=pymysql</arg>
+<arg>dbName=dbfree_db</arg>
+<arg>dbUsername=dbfree_db</arg>
+<arg>dbPassword=12345678</arg>
+<arg>dbHost=db4free.net</arg>
+<arg>dbPort=3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220318 12:53:51.853" level="INFO">Connecting using : pymysql.connect(db=dbfree_db, user=dbfree_db, passwd=12345678, host=db4free.net, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220318 12:53:51.735" endtime="20220318 12:53:57.967"/>
+</kw>
 <test id="s1-t1" name="TC1">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220318 11:44:25.573" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220318 11:44:25.571" endtime="20220318 11:44:50.844"/>
+<kw name="Table Must Exist" library="DatabaseLibrary">
+<arg>Products</arg>
+<doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
+explicit transaction commit or rollback.</doc>
+<msg timestamp="20220318 12:53:57.968" level="INFO">Executing : Table Must Exist  |  Products </msg>
+<msg timestamp="20220318 12:53:57.968" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='Products' </msg>
+<status status="PASS" starttime="20220318 12:53:57.967" endtime="20220318 12:54:00.726"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220318 11:44:50.848" endtime="20220318 11:44:51.164"/>
+<kw name="Row Count" library="DatabaseLibrary">
+<var>${count}</var>
+<arg>select * from Products</arg>
+<doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
+optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220318 12:54:00.727" level="INFO">Executing : Row Count  |  select * from Products </msg>
+<msg timestamp="20220318 12:54:01.303" level="INFO">${count} = 57</msg>
+<status status="PASS" starttime="20220318 12:54:00.726" endtime="20220318 12:54:01.303"/>
 </kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220318 11:44:51.180" endtime="20220318 11:44:51.269"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220318 12:54:01.304" endtime="20220318 12:54:01.305"/>
 </kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://www.medibuddy.in/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220318 11:44:51.279" level="INFO">Opening url 'https://www.medibuddy.in/'</msg>
-<status status="PASS" starttime="20220318 11:44:51.278" endtime="20220318 11:44:59.081"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//button[text()='Not Now']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220318 11:44:59.089" level="INFO">Clicking element 'xpath=//button[text()='Not Now']'.</msg>
-<status status="PASS" starttime="20220318 11:44:59.088" endtime="20220318 11:45:20.028"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>link=For Employer</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220318 11:45:20.073" level="INFO">Clicking element 'link=For Employer'.</msg>
-<status status="PASS" starttime="20220318 11:45:20.072" endtime="20220318 11:45:23.520"/>
-</kw>
-<kw name="Switch Window" library="SeleniumLibrary">
-<arg>MediBuddy LaunchPad</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" starttime="20220318 11:45:23.521" endtime="20220318 11:45:41.829"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=getInTouchName</arg>
-<arg>Anupriya</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220318 11:45:41.831" level="INFO">Typing text 'Anupriya' into text field 'id=getInTouchName'.</msg>
-<status status="PASS" starttime="20220318 11:45:41.830" endtime="20220318 11:45:43.741"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=getInTouchEmail</arg>
-<arg>anupriya@gmail.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220318 11:45:43.748" level="INFO">Typing text 'anupriya@gmail.com' into text field 'id=getInTouchEmail'.</msg>
-<status status="PASS" starttime="20220318 11:45:43.747" endtime="20220318 11:45:44.844"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=getInTouchMobile</arg>
-<arg>123456</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220318 11:45:44.848" level="INFO">Typing text '123456' into text field 'id=getInTouchMobile'.</msg>
-<status status="PASS" starttime="20220318 11:45:44.847" endtime="20220318 11:45:45.677"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=getInTouchDesignation</arg>
-<arg>employee</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220318 11:45:45.699" level="INFO">Typing text 'employee' into text field 'id=getInTouchDesignation'.</msg>
-<status status="PASS" starttime="20220318 11:45:45.698" endtime="20220318 11:45:47.823"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=getInTouchEmpCount</arg>
-<arg>1</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220318 11:45:47.825" level="INFO">Typing text '1' into text field 'id=getInTouchEmpCount'.</msg>
-<status status="PASS" starttime="20220318 11:45:47.825" endtime="20220318 11:45:48.159"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//button[text()='Get in Touch']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220318 11:45:48.162" level="INFO">Clicking element 'xpath=//button[text()='Get in Touch']'.</msg>
-<status status="PASS" starttime="20220318 11:45:48.161" endtime="20220318 11:45:48.528"/>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>//div[contains(text(),'digits')]</arg>
-<arg>Mobile Number should be 10 digits</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220318 11:45:48.531" level="INFO">Verifying element '//div[contains(text(),'digits')]' contains exact text 'Mobile Number should be 10 digits'.</msg>
-<status status="PASS" starttime="20220318 11:45:48.530" endtime="20220318 11:45:49.353"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220318 11:45:49.362" endtime="20220318 11:46:05.377"/>
-</kw>
-<kw name="Stop Recording Test" library="AutoRecorder">
-<arg>TC1</arg>
-<doc>There is no need to execute this keyword manually.
-Basically - alias for https://mihaiparvu.github.io/ScreenCapLibrary/ScreenCapLibrary.html#Stop%20Video%20Recording</doc>
-<msg timestamp="20220318 11:46:06.049" level="INFO" html="true">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220318 11:46:05.398" endtime="20220318 11:46:06.049"/>
-</kw>
-<doc>Validates whether user gets error message for mobile number or not Mobile Number should be 10 digits</doc>
-<status status="PASS" starttime="20220318 11:44:22.429" endtime="20220318 11:46:05.391"/>
+<status status="PASS" starttime="20220318 12:53:57.967" endtime="20220318 12:54:01.305"/>
 </test>
-<status status="PASS" starttime="20220318 11:44:18.135" endtime="20220318 11:46:06.057"/>
+<test id="s1-t2" name="TC2">
+<kw name="Row Count Is Equal To X" library="DatabaseLibrary">
+<arg>select * from Products where product_id=10</arg>
+<arg>1</arg>
+<doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
+will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
+transaction commit or rollback.</doc>
+<msg timestamp="20220318 12:54:01.308" level="INFO">Executing : Row Count Is Equal To X  |  select * from Products where product_id=10  |  1 </msg>
+<msg timestamp="20220318 12:54:01.308" level="INFO">Executing : Row Count  |  select * from Products where product_id=10 </msg>
+<status status="PASS" starttime="20220318 12:54:01.307" endtime="20220318 12:54:01.940"/>
+</kw>
+<status status="PASS" starttime="20220318 12:54:01.307" endtime="20220318 12:54:01.941"/>
+</test>
+<test id="s1-t3" name="TC3">
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<arg>Insert into Products (product_id,productname,description) values (1020,'Anupriya','name')</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220318 12:54:01.944" level="INFO">Executing : Execute SQL String  |  Insert into Products (product_id,productname,description) values (1020,'Anupriya','name') </msg>
+<status status="PASS" starttime="20220318 12:54:01.944" endtime="20220318 12:54:02.892"/>
+</kw>
+<kw name="Row Count Is Equal To X" library="DatabaseLibrary">
+<arg>select * from Products where product_id=1020</arg>
+<arg>1</arg>
+<doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
+will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
+transaction commit or rollback.</doc>
+<msg timestamp="20220318 12:54:02.895" level="INFO">Executing : Row Count Is Equal To X  |  select * from Products where product_id=1020  |  1 </msg>
+<msg timestamp="20220318 12:54:02.895" level="INFO">Executing : Row Count  |  select * from Products where product_id=1020 </msg>
+<status status="PASS" starttime="20220318 12:54:02.894" endtime="20220318 12:54:03.446"/>
+</kw>
+<status status="PASS" starttime="20220318 12:54:01.943" endtime="20220318 12:54:03.447"/>
+</test>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220318 12:54:03.449" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220318 12:54:03.449" endtime="20220318 12:54:03.450"/>
+</kw>
+<status status="PASS" starttime="20220318 12:53:51.637" endtime="20220318 12:54:03.450"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo2 Medibuddy Tabs Suite">Demo2 Medibuddy Tabs Suite</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Demo1 Suite">Demo1 Suite</stat>
 </suite>
 </statistics>
 <errors>
