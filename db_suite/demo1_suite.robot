@@ -14,10 +14,12 @@ TC1
 
 TC2
     Row Count Is Equal To X     select * from Products where product_id=10     1
+    Row Count Is Greater Than X     select * from Products     10
+    Row Count Is Less Than X     select * from Products     100
 
 TC3
-    Execute Sql String     Insert into Products (product_id,productname,description) values (1033,'Anupriya','name')
-    Row Count Is Equal To X     select * from Products where product_id=1033     1
+    #Execute Sql String     Insert into Products (product_id,productname,description) values (1033,'Anupriya','name')
+    #Row Count Is Equal To X     select * from Products where product_id=1033     1
 
 TC4
     #use keyword query to get the select statement output as list
@@ -31,6 +33,12 @@ TC5
     Execute Sql String    update Products set productname='Anu' where product_id=1033
     @{output}     Query    select * from Products where product_id=1033
     Log To Console    @{output}
+
+TC6
+    @{output}     Query    select * from Products where product_id=1023
+    Log To Console    ${output}
+    Log To Console    ${output}[0]
+    Log To Console    ${output}[0][1]
 
 
 
