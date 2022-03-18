@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220318 12:53:51.633" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220318 14:26:58.365" rpa="false" schemaversion="2">
 <suite id="s1" name="Demo1 Suite" source="D:\ROBOT\Robot_Project\db_suite\demo1_suite.robot">
 <kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
 <arg>dbapiModuleName=pymysql</arg>
@@ -10,33 +10,33 @@
 <arg>dbPort=3306</arg>
 <doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
 connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20220318 12:53:51.853" level="INFO">Connecting using : pymysql.connect(db=dbfree_db, user=dbfree_db, passwd=12345678, host=db4free.net, port=3306, charset=None) </msg>
-<status status="PASS" starttime="20220318 12:53:51.735" endtime="20220318 12:53:57.967"/>
+<msg timestamp="20220318 14:26:58.653" level="INFO">Connecting using : pymysql.connect(db=dbfree_db, user=dbfree_db, passwd=12345678, host=db4free.net, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220318 14:26:58.495" endtime="20220318 14:27:00.094"/>
 </kw>
 <test id="s1-t1" name="TC1">
 <kw name="Table Must Exist" library="DatabaseLibrary">
 <arg>Products</arg>
 <doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
 explicit transaction commit or rollback.</doc>
-<msg timestamp="20220318 12:53:57.968" level="INFO">Executing : Table Must Exist  |  Products </msg>
-<msg timestamp="20220318 12:53:57.968" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='Products' </msg>
-<status status="PASS" starttime="20220318 12:53:57.967" endtime="20220318 12:54:00.726"/>
+<msg timestamp="20220318 14:27:00.096" level="INFO">Executing : Table Must Exist  |  Products </msg>
+<msg timestamp="20220318 14:27:00.096" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='Products' </msg>
+<status status="PASS" starttime="20220318 14:27:00.095" endtime="20220318 14:27:03.037"/>
 </kw>
 <kw name="Row Count" library="DatabaseLibrary">
 <var>${count}</var>
 <arg>select * from Products</arg>
 <doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
 optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
-<msg timestamp="20220318 12:54:00.727" level="INFO">Executing : Row Count  |  select * from Products </msg>
-<msg timestamp="20220318 12:54:01.303" level="INFO">${count} = 57</msg>
-<status status="PASS" starttime="20220318 12:54:00.726" endtime="20220318 12:54:01.303"/>
+<msg timestamp="20220318 14:27:03.038" level="INFO">Executing : Row Count  |  select * from Products </msg>
+<msg timestamp="20220318 14:27:03.597" level="INFO">${count} = 79</msg>
+<status status="PASS" starttime="20220318 14:27:03.038" endtime="20220318 14:27:03.597"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${count}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220318 12:54:01.304" endtime="20220318 12:54:01.305"/>
+<status status="PASS" starttime="20220318 14:27:03.598" endtime="20220318 14:27:03.600"/>
 </kw>
-<status status="PASS" starttime="20220318 12:53:57.967" endtime="20220318 12:54:01.305"/>
+<status status="PASS" starttime="20220318 14:27:00.094" endtime="20220318 14:27:03.601"/>
 </test>
 <test id="s1-t2" name="TC2">
 <kw name="Row Count Is Equal To X" library="DatabaseLibrary">
@@ -45,47 +45,95 @@ optional input `sansTran` to True to run command without an explicit transaction
 <doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
 will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20220318 12:54:01.308" level="INFO">Executing : Row Count Is Equal To X  |  select * from Products where product_id=10  |  1 </msg>
-<msg timestamp="20220318 12:54:01.308" level="INFO">Executing : Row Count  |  select * from Products where product_id=10 </msg>
-<status status="PASS" starttime="20220318 12:54:01.307" endtime="20220318 12:54:01.940"/>
+<msg timestamp="20220318 14:27:03.605" level="INFO">Executing : Row Count Is Equal To X  |  select * from Products where product_id=10  |  1 </msg>
+<msg timestamp="20220318 14:27:03.605" level="INFO">Executing : Row Count  |  select * from Products where product_id=10 </msg>
+<status status="PASS" starttime="20220318 14:27:03.605" endtime="20220318 14:27:04.200"/>
 </kw>
-<status status="PASS" starttime="20220318 12:54:01.307" endtime="20220318 12:54:01.941"/>
+<status status="PASS" starttime="20220318 14:27:03.603" endtime="20220318 14:27:04.202"/>
 </test>
 <test id="s1-t3" name="TC3">
 <kw name="Execute Sql String" library="DatabaseLibrary">
-<arg>Insert into Products (product_id,productname,description) values (1020,'Anupriya','name')</arg>
+<arg>Insert into Products (product_id,productname,description) values (1033,'Anupriya','name')</arg>
 <doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
 True to run command without an explicit transaction commit or rollback.</doc>
-<msg timestamp="20220318 12:54:01.944" level="INFO">Executing : Execute SQL String  |  Insert into Products (product_id,productname,description) values (1020,'Anupriya','name') </msg>
-<status status="PASS" starttime="20220318 12:54:01.944" endtime="20220318 12:54:02.892"/>
+<msg timestamp="20220318 14:27:04.233" level="INFO">Executing : Execute SQL String  |  Insert into Products (product_id,productname,description) values (1033,'Anupriya','name') </msg>
+<status status="PASS" starttime="20220318 14:27:04.233" endtime="20220318 14:27:05.065"/>
 </kw>
 <kw name="Row Count Is Equal To X" library="DatabaseLibrary">
-<arg>select * from Products where product_id=1020</arg>
+<arg>select * from Products where product_id=1033</arg>
 <arg>1</arg>
 <doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
 will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
 transaction commit or rollback.</doc>
-<msg timestamp="20220318 12:54:02.895" level="INFO">Executing : Row Count Is Equal To X  |  select * from Products where product_id=1020  |  1 </msg>
-<msg timestamp="20220318 12:54:02.895" level="INFO">Executing : Row Count  |  select * from Products where product_id=1020 </msg>
-<status status="PASS" starttime="20220318 12:54:02.894" endtime="20220318 12:54:03.446"/>
+<msg timestamp="20220318 14:27:05.075" level="INFO">Executing : Row Count Is Equal To X  |  select * from Products where product_id=1033  |  1 </msg>
+<msg timestamp="20220318 14:27:05.075" level="INFO">Executing : Row Count  |  select * from Products where product_id=1033 </msg>
+<status status="PASS" starttime="20220318 14:27:05.075" endtime="20220318 14:27:05.601"/>
 </kw>
-<status status="PASS" starttime="20220318 12:54:01.943" endtime="20220318 12:54:03.447"/>
+<status status="PASS" starttime="20220318 14:27:04.232" endtime="20220318 14:27:05.601"/>
+</test>
+<test id="s1-t4" name="TC4">
+<kw name="Query" library="DatabaseLibrary">
+<var>@{output}</var>
+<arg>select * from Products</arg>
+<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
+input `sansTran` to True to run command without an explicit transaction commit or rollback.
+Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
+<msg timestamp="20220318 14:27:05.605" level="INFO">Executing : Query  |  select * from Products </msg>
+<msg timestamp="20220318 14:27:06.122" level="INFO">@{output} = [ (1, 'Basu', 'ji') | (10, 'Basu', '7 plus 128 Gb') | (11, 'Basu', 'mayank') | (13, 'Basu', 'xxx') | (23, 'Basu', 'justname') | (42, 'Basu', 'isha') | (50, 'apsar', 'justname') | (67, 'Basu', 'justnam...</msg>
+<status status="PASS" starttime="20220318 14:27:05.604" endtime="20220318 14:27:06.122"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220318 14:27:06.134" endtime="20220318 14:27:06.139"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220318 14:27:06.141" endtime="20220318 14:27:06.146"/>
+</kw>
+<status status="PASS" starttime="20220318 14:27:05.603" endtime="20220318 14:27:06.147"/>
+</test>
+<test id="s1-t5" name="TC5">
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<arg>update Products set productname='Anu' where product_id=1033</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220318 14:27:06.156" level="INFO">Executing : Execute SQL String  |  update Products set productname='Anu' where product_id=1033 </msg>
+<status status="PASS" starttime="20220318 14:27:06.154" endtime="20220318 14:27:06.985"/>
+</kw>
+<kw name="Query" library="DatabaseLibrary">
+<var>@{output}</var>
+<arg>select * from Products where product_id=1033</arg>
+<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
+input `sansTran` to True to run command without an explicit transaction commit or rollback.
+Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
+<msg timestamp="20220318 14:27:06.987" level="INFO">Executing : Query  |  select * from Products where product_id=1033 </msg>
+<msg timestamp="20220318 14:27:07.667" level="INFO">@{output} = [ (1033, 'Anu', 'name') ]</msg>
+<status status="PASS" starttime="20220318 14:27:06.986" endtime="20220318 14:27:07.667"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>@{output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220318 14:27:07.671" endtime="20220318 14:27:07.673"/>
+</kw>
+<status status="PASS" starttime="20220318 14:27:06.153" endtime="20220318 14:27:07.673"/>
 </test>
 <kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
 <doc>Disconnects from the database.</doc>
-<msg timestamp="20220318 12:54:03.449" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20220318 12:54:03.449" endtime="20220318 12:54:03.450"/>
+<msg timestamp="20220318 14:27:07.679" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220318 14:27:07.678" endtime="20220318 14:27:07.679"/>
 </kw>
-<status status="PASS" starttime="20220318 12:53:51.637" endtime="20220318 12:54:03.450"/>
+<status status="PASS" starttime="20220318 14:26:58.371" endtime="20220318 14:27:07.680"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Demo1 Suite">Demo1 Suite</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Demo1 Suite">Demo1 Suite</stat>
 </suite>
 </statistics>
 <errors>
