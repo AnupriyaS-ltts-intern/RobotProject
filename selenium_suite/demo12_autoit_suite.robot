@@ -17,3 +17,5 @@ TC1
     Control Set Text     Open     ${EMPTY}     Edit1     D:${/}NASSCOM _ The trade association of Indian IT BPM industry.pdf
     Sleep     1s
     Control Click     Open     ${EMPTY}     Button1
+
+    Element Text Should Be     xpath=//span[@class='file__info__name']     NASSCOM _ The trade association of Indian IT BPM industry.pdf
