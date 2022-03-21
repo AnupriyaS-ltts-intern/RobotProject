@@ -8,6 +8,11 @@ ${MY_NAME}     Anupriya S
 
 
 *** Test Cases ***
+
+TC5
+    ${count}     Get Length     ${COLORS}
+
+
 TC1
     Set Local Variable    ${name}     AnupriyaS
     Log To Console    ${name}
