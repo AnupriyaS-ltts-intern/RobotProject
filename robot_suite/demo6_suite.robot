@@ -16,6 +16,7 @@ TC3
     &{emp_dic}      Create Dictionary   empname=Anupriya    companyname=XXX
     Log To Console    ${emp_dic}
     Log To Console    ${emp_dic}[empname]
+    Log To Console    hello
 
 
 
