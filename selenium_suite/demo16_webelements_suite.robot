@@ -8,23 +8,25 @@ TC1
     Maximize Browser Window
     Set Selenium Implicit Wait    20s
     Go To    url=http://google.com/
-    ${link_count}     Get Element Count    tag=a
+    ${link_count}   Get Element Count    tag=a
     Log To Console    ${link_count}
 
-    @{elements}     Get WebElements    tag=a
+    @{elements}  Get WebElements    tag=a
     Log To Console    ${elements}
 
-    #Click Element    ${elements}[0]
+#    Click Element    ${elements}[0]
     ${text}     Get Text    ${elements}[0]
     Log To Console    ${text}
 
+
     FOR    ${i}    IN RANGE    0    25    1
-        ${text}     Get Text    ${elements}[${i}]
-        Log To Console    ${text}
+         ${text}     Get Text    ${elements}[${i}]
+         Log To Console    ${text}
     END
-    
+
     FOR    ${element}    IN    @{elements}
-        ${text}     Get Text    locator
-        Log    ${element}
-         
+        ${text}     Get Text    ${element}
+         Log To Console    ${text}
+         Run Keyword If    '${text}'=='Images'      Click Element    ${element}
+         Exit For Loop If    '${text}'=='Images'
     END
