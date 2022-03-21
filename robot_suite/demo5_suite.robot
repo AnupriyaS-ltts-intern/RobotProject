@@ -10,7 +10,16 @@ ${MY_NAME}     Anupriya S
 *** Test Cases ***
 
 TC5
-    ${count}     Get Length     ${COLORS}
+    ${count}    Get Length    ${COLORS}
+    Log To Console    ${count}
+
+    FOR    ${i}    IN RANGE    0    ${count}    1
+        Log To Console    ${COLORS}[${i}]
+    END
+TC6
+    FOR    ${color}    IN    @{COLORS}
+        Log To Console    ${color}
+    END
 
 
 TC1
